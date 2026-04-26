@@ -1,0 +1,12 @@
+steps:
+  - id: scope-checkpoint
+    file: step-01-scope-checkpoint.md
+  - id: architecture-plan
+    file: step-02-architecture-plan.md
+  - id: implement-feature
+    file: step-03-implement-feature.md
+  - id: test-and-review
+    file: step-04-test-and-review.md
+  - id: final-checkpoint
+    file: step-05-final-checkpoint.md
+

@@ -1,0 +1,7 @@
+{
+  "id": "qa-regression",
+  "name": "QA Regression Squad",
+  "description": "Plans and executes regression validation for a release scope.",
+  "domain": "software"
+}
+

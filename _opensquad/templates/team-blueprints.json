@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "blueprints": [
+    {
+      "id": "mobile-web-app",
+      "name": "Mobile + Web Product Team",
+      "description": "Default squad pack for products with Android, iOS, and web surfaces.",
+      "squads": [
+        {
+          "templateId": "platform-delivery-team",
+          "code": "__PREFIX__-platform-team",
+          "name": "__PREFIX__ Platform Team"
+        }
+      ]
+    },
+    {
+      "id": "landing-page",
+      "name": "Landing Page Team",
+      "description": "Lean setup for marketing websites and conversion pages.",
+      "squads": [
+        {
+          "templateId": "fullstack-feature",
+          "code": "__PREFIX__-landing-delivery",
+          "name": "__PREFIX__ Landing Delivery"
+        },
+        {
+          "templateId": "qa-regression",
+          "code": "__PREFIX__-landing-qa",
+          "name": "__PREFIX__ Landing QA"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce Team",
+      "description": "Cross-functional setup for catalog, checkout, and release quality.",
+      "squads": [
+        {
+          "templateId": "fullstack-feature",
+          "code": "__PREFIX__-commerce-delivery",
+          "name": "__PREFIX__ Commerce Delivery"
+        },
+        {
+          "templateId": "backend-feature",
+          "code": "__PREFIX__-commerce-backend",
+          "name": "__PREFIX__ Commerce Backend"
+        },
+        {
+          "templateId": "qa-regression",
+          "code": "__PREFIX__-commerce-regression",
+          "name": "__PREFIX__ Commerce Regression"
+        },
+        {
+          "templateId": "release-ops",
+          "code": "__PREFIX__-commerce-release",
+          "name": "__PREFIX__ Commerce Release"
+        }
+      ]
+    },
+    {
+      "id": "software-general",
+      "name": "Software General Team",
+      "description": "Fallback setup for any software project when no specific pattern is detected.",
+      "squads": [
+        {
+          "templateId": "fullstack-feature",
+          "code": "__PREFIX__-delivery",
+          "name": "__PREFIX__ Delivery"
+        },
+        {
+          "templateId": "qa-regression",
+          "code": "__PREFIX__-regression",
+          "name": "__PREFIX__ Regression"
+        },
+        {
+          "templateId": "release-ops",
+          "code": "__PREFIX__-release",
+          "name": "__PREFIX__ Release"
+        }
+      ]
+    }
+  ]
+}

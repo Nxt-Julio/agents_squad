@@ -1,0 +1,10 @@
+steps:
+  - id: release-scope-checkpoint
+    file: step-01-release-scope-checkpoint.md
+  - id: release-plan
+    file: step-02-release-plan.md
+  - id: deploy-readiness
+    file: step-03-deploy-readiness.md
+  - id: go-no-go-checkpoint
+    file: step-04-go-no-go-checkpoint.md
+

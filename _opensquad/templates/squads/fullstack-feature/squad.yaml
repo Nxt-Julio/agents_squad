@@ -1,0 +1,29 @@
+squad:
+  code: "__SQUAD_CODE__"
+  name: "__SQUAD_NAME__"
+  description: "Fullstack feature delivery squad"
+  icon: "🛠️"
+  agents:
+    - architect
+    - backend-engineer
+    - frontend-engineer
+    - qa-reviewer
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+
+pipeline:
+  steps:
+    - step-01-scope-checkpoint.md
+    - step-02-architecture-plan.md
+    - step-03-implement-backend.md
+    - step-04-implement-frontend.md
+    - step-05-qa-review.md
+    - step-06-final-checkpoint.md
+

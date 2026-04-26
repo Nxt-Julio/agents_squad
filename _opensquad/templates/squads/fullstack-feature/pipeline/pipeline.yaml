@@ -1,0 +1,14 @@
+steps:
+  - id: scope-checkpoint
+    file: step-01-scope-checkpoint.md
+  - id: architecture-plan
+    file: step-02-architecture-plan.md
+  - id: implement-backend
+    file: step-03-implement-backend.md
+  - id: implement-frontend
+    file: step-04-implement-frontend.md
+  - id: qa-review
+    file: step-05-qa-review.md
+  - id: final-checkpoint
+    file: step-06-final-checkpoint.md
+

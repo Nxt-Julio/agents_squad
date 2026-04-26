@@ -1,0 +1,34 @@
+squad:
+  code: "__SQUAD_CODE__"
+  name: "__SQUAD_NAME__"
+  description: "Adaptive multiplatform software delivery team"
+  icon: "DEV"
+  agents:
+    - request-analyst
+    - web-engineer
+    - android-engineer
+    - ios-engineer
+    - code-reviewer
+    - qa-analyst
+    - release-manager
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+
+pipeline:
+  steps:
+    - step-01-request-checkpoint.md
+    - step-02-analyze-request.md
+    - step-03-implement-web.md
+    - step-04-implement-android.md
+    - step-05-implement-ios.md
+    - step-06-code-review.md
+    - step-07-qa-analysis.md
+    - step-08-release-summary.md
+    - step-09-final-checkpoint.md

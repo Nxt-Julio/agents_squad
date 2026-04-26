@@ -1,0 +1,21 @@
+squad:
+  code: "__SQUAD_CODE__"
+  name: "__SQUAD_NAME__"
+  description: "Release planning and operations squad"
+  icon: "🚀"
+  agents:
+    - release-planner
+    - deploy-operator
+    - reliability-reviewer
+
+skills:
+  - web_search
+  - web_fetch
+
+pipeline:
+  steps:
+    - step-01-release-scope-checkpoint.md
+    - step-02-release-plan.md
+    - step-03-deploy-readiness.md
+    - step-04-go-no-go-checkpoint.md
+

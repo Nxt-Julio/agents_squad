@@ -1,0 +1,21 @@
+squad:
+  code: "__SQUAD_CODE__"
+  name: "__SQUAD_NAME__"
+  description: "Regression planning and execution squad"
+  icon: "🧪"
+  agents:
+    - qa-planner
+    - qa-executor
+    - qa-reviewer
+
+skills:
+  - web_search
+  - web_fetch
+
+pipeline:
+  steps:
+    - step-01-scope-checkpoint.md
+    - step-02-test-plan.md
+    - step-03-run-regression.md
+    - step-04-verdict-checkpoint.md
+

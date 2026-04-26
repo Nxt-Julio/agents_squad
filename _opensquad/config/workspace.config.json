@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "workspaceMode": "global",
+  "activeProject": "",
+  "projectsDir": "projects",
+  "globalSquadsDir": "squads",
+  "globalSkillsDir": "skills",
+  "inheritGlobalSkills": true
+}
+

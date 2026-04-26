@@ -1,0 +1,4 @@
+interface:
+  display_name: "Opensquad Team"
+  short_description: "Create and run multi-agent squads for software teams"
+  default_prompt: "/opensquad"

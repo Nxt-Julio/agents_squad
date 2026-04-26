@@ -1,0 +1,5 @@
+displayName,icon,path
+Aria Architecture,🧠,./agents/architect.agent.md
+Bruno Backend,⚙️,./agents/backend-engineer.agent.md
+Quinn Quality,✅,./agents/qa-reviewer.agent.md
+

@@ -1,0 +1,5 @@
+displayName,icon,path
+Paula Plan,📋,./agents/qa-planner.agent.md
+Elias Executor,🧪,./agents/qa-executor.agent.md
+Rita Review,✅,./agents/qa-reviewer.agent.md
+

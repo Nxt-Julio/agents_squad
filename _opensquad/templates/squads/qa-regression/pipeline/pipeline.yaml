@@ -1,0 +1,10 @@
+steps:
+  - id: scope-checkpoint
+    file: step-01-scope-checkpoint.md
+  - id: test-plan
+    file: step-02-test-plan.md
+  - id: run-regression
+    file: step-03-run-regression.md
+  - id: verdict-checkpoint
+    file: step-04-verdict-checkpoint.md
+

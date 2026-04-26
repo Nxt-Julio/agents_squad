@@ -1,0 +1,25 @@
+{
+  "name": "opensquad-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "validate:opensquad": "node scripts/validate-opensquad.js",
+    "opensquad:project": "node scripts/opensquad-project.js",
+    "opensquad:project:list": "node scripts/opensquad-project.js list",
+    "opensquad:project:current": "node scripts/opensquad-project.js current",
+    "opensquad:migrate-squad": "node scripts/migrate-squad-to-project.js",
+    "opensquad:template": "node scripts/create-squad-from-template.js",
+    "opensquad:template:list": "node scripts/create-squad-from-template.js list",
+    "opensquad:team": "node scripts/bootstrap-team-blueprint.js",
+    "opensquad:team:list": "node scripts/bootstrap-team-blueprint.js list",
+    "opensquad:team:detect": "node scripts/bootstrap-team-blueprint.js detect",
+    "opensquad:team:apply": "node scripts/bootstrap-team-blueprint.js apply",
+    "opensquad:report:portfolio": "node scripts/portfolio-report.js",
+    "codex:skill:install": "node scripts/install-codex-opensquad-skill.js",
+    "codex:skill:install:force": "node scripts/install-codex-opensquad-skill.js --force",
+    "codex:skill:path": "node scripts/install-codex-opensquad-skill.js --print-path"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

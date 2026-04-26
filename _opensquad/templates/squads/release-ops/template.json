@@ -1,0 +1,7 @@
+{
+  "id": "release-ops",
+  "name": "Release Ops Squad",
+  "description": "Prepares release plan, runbooks, and go/no-go checks.",
+  "domain": "software"
+}
+

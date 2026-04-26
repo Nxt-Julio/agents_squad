@@ -1,0 +1,29 @@
+squad:
+  code: "__SQUAD_CODE__"
+  name: "__SQUAD_NAME__"
+  description: "Backend feature delivery squad"
+  icon: "🧩"
+  agents:
+    - architect
+    - backend-engineer
+    - qa-reviewer
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+
+pipeline:
+  steps:
+    - step-01-scope-checkpoint.md
+    - step-02-architecture-plan.md
+    - step-03-implement-feature.md
+    - step-04-test-and-review.md
+    - step-05-final-checkpoint.md
+

@@ -1,0 +1,5 @@
+displayName,icon,path
+Rafa Release,📦,./agents/release-planner.agent.md
+Davi Deploy,🚀,./agents/deploy-operator.agent.md
+Olivia Ops,🛡️,./agents/reliability-reviewer.agent.md
+
