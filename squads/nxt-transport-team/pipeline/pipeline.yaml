@@ -1,0 +1,20 @@
+steps:
+  - id: request-checkpoint
+    file: step-01-request-checkpoint.md
+  - id: analyze-request
+    file: step-02-analyze-request.md
+  - id: implement-backend
+    file: step-03-implement-backend.md
+  - id: implement-web
+    file: step-04-implement-web.md
+  - id: implement-mobile
+    file: step-05-implement-mobile.md
+  - id: code-review
+    file: step-06-code-review.md
+  - id: qa-analysis
+    file: step-07-qa-analysis.md
+  - id: release-summary
+    file: step-08-release-summary.md
+  - id: final-checkpoint
+    file: step-09-final-checkpoint.md
+max_review_cycles: 2

@@ -37,3 +37,6 @@ projects/*/squads/*/output/*
 !projects/*/squads/*/output/.gitkeep
 squads/*/output/*
 !squads/*/output/.gitkeep
+
+# NXT Transport: repositorios de codigo (clonados ao lado, cada um com seu git)
+project-nxt-transport-*/

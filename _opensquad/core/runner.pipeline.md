@@ -290,6 +290,7 @@ Apply this transformation consistently for every write in this step.
    if ((Test-Path "{transformed inputFile path}") -and ((Get-Item "{transformed inputFile path}").Length -gt 0)) { "VALIDATION:PASS" } else { "VALIDATION:FAIL" }
    ```
    - Apply the Output Path Transformation (Step 1: run_id injection) to the `inputFile` path before running the check.
+   - Outputs are saved inside version folders (`vN/`). If the file is not found directly at the transformed path, resolve it to the highest `vN/` folder in the same group that contains the file (e.g. `squads/{name}/output/{run_id}/programming-dispatch.md` → `squads/{name}/output/{run_id}/v1/programming-dispatch.md`). Use that resolved path for the check and pass it to the step. The same resolution applies to any input path a step file references with `{run_id}/v*/`.
    - If the shell output contains `VALIDATION:PASS` → proceed to execute the step.
    - If the shell output contains `VALIDATION:FAIL` → do NOT execute the step. Present to user:
      ```

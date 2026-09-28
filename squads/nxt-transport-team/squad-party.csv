@@ -1,0 +1,8 @@
+displayName,icon,path
+Ana Analise,A,./agents/request-analyst.agent.md
+Bruno Backend,B,./agents/backend-engineer.agent.md
+Walter Web,W,./agents/web-engineer.agent.md
+Marina Mobile,M,./agents/mobile-engineer.agent.md
+Rafael Revisao,R,./agents/code-reviewer.agent.md
+Quenia QA,Q,./agents/qa-analyst.agent.md
+Renato Release,L,./agents/release-manager.agent.md

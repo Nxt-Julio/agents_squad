@@ -1,0 +1,35 @@
+squad:
+  code: "nxt-transport-team"
+  name: "NXT Transport Team"
+  description: "Time de entrega do NXT Transport: backend (API), web (painel) e mobile (React Native), com revisao, QA e release"
+  icon: "DEV"
+  agents:
+    - request-analyst
+    - backend-engineer
+    - web-engineer
+    - mobile-engineer
+    - code-reviewer
+    - qa-analyst
+    - release-manager
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/anti-patterns.md
+  - pipeline/data/output-examples.md
+
+pipeline:
+  steps:
+    - step-01-request-checkpoint.md
+    - step-02-analyze-request.md
+    - step-03-implement-backend.md
+    - step-04-implement-web.md
+    - step-05-implement-mobile.md
+    - step-06-code-review.md
+    - step-07-qa-analysis.md
+    - step-08-release-summary.md
+    - step-09-final-checkpoint.md
