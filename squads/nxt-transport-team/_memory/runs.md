@@ -2,6 +2,7 @@
 
 | Data | Run ID | Tema | Output | Resultado |
 |------|--------|------|--------|-----------|
+| 2026-09-30 | 2026-09-30-102530 | Assinatura do POD no Android (traco e botao confirmar) + botoes proporcionais a tela | Mobile: modal de assinatura em tela cheia com botoes nativos, utilitario de escala responsiva em Button/IconButton + 21 testes | Publicado (merge na main; validar no APK) |
 | 2026-09-30 | 2026-09-30-011408 | Aba Dashboard (primeira no web e no app) com financeiro recebido/a receber, taxas e cargas | Backend: GET /dashboard (periodo -03:00, escopo matriz/filial) + 14 testes; Web: DashboardView primeira aba; Mobile: aba Dashboard do motorista e Inicio→Dashboard da empresa | Publicado (merge na main) |
 | 2026-09-29 | 2026-09-28-232906 | Gestao de filiais pela matriz (cadastro so matriz, escopo matriz/filial, entrar como, 409 de dependencias) | Backend: escopo em todos os pontos de dono E, ownerEnterpriseId, CLI branch-report, 26 testes de integracao; Web/Mobile: contrato conferido, 403 ENTERPRISE_INACTIVE com logout, Financeiro alinhado | Aprovado (migrations 100000/150000/210000 pendentes em producao) |
 | 2026-09-28 | 2026-09-28-145748 | Monetizacao pay-per-post (1a carga gratis, 3% a partir da 2a) com bloqueio 402 por CNPJ raiz, rascunho e tela Financeiro | Backend: invoices/billing_groups + guard 402 + Pix BR Code + baixa admin/CLI; Web/Mobile: 402 com rascunho, Financeiro, pricing; planejamento de filiais | Aprovado (migration pendente em producao) |
