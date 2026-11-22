@@ -1,0 +1,39 @@
+squad:
+  code: "prosystem-team"
+  name: "ProSystem Team"
+  description: "Time de entrega do ProSystem (PHP 8.4 + PostgreSQL, monorepo Nxt-Julio/prosystem): analise, backend, telas, aceite, revisao, QA, merge no GitHub, deploy no Coolify e registro no cerebro"
+  icon: "PRO"
+  agents:
+    - request-analyst
+    - backend-engineer
+    - frontend-engineer
+    - code-reviewer
+    - qa-analyst
+    - github-specialist
+    - coolify-specialist
+    - brain-keeper
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/anti-patterns.md
+  - pipeline/data/output-examples.md
+
+pipeline:
+  steps:
+    - step-01-request-checkpoint.md
+    - step-02-analyze-request.md
+    - step-03-implement-backend.md
+    - step-04-implement-frontend.md
+    - step-05-acceptance-review.md
+    - step-06-code-review.md
+    - step-07-qa-validation.md
+    - step-08-merge-approval.md
+    - step-09-github-merge.md
+    - step-10-coolify-deploy.md
+    - step-11-brain-record.md
+    - step-12-final-delivery.md

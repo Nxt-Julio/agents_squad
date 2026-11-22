@@ -1,0 +1,26 @@
+steps:
+  - id: request-checkpoint
+    file: step-01-request-checkpoint.md
+  - id: analyze-request
+    file: step-02-analyze-request.md
+  - id: implement-backend
+    file: step-03-implement-backend.md
+  - id: implement-frontend
+    file: step-04-implement-frontend.md
+  - id: acceptance-review
+    file: step-05-acceptance-review.md
+  - id: code-review
+    file: step-06-code-review.md
+  - id: qa-validation
+    file: step-07-qa-validation.md
+  - id: merge-approval
+    file: step-08-merge-approval.md
+  - id: github-merge
+    file: step-09-github-merge.md
+  - id: coolify-deploy
+    file: step-10-coolify-deploy.md
+  - id: brain-record
+    file: step-11-brain-record.md
+  - id: final-delivery
+    file: step-12-final-delivery.md
+max_review_cycles: 3
