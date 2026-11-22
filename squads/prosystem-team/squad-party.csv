@@ -1,0 +1,9 @@
+displayName,icon,path
+Paula Análise,P,./agents/request-analyst.agent.md
+Beto Backend,B,./agents/backend-engineer.agent.md
+Fernanda Front,F,./agents/frontend-engineer.agent.md
+Carlos Código,C,./agents/code-reviewer.agent.md
+Quésia QA,Q,./agents/qa-analyst.agent.md
+Gustavo GitHub,G,./agents/github-specialist.agent.md
+Caio Coolify,K,./agents/coolify-specialist.agent.md
+Mônica Memória,M,./agents/brain-keeper.agent.md

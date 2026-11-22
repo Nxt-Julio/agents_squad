@@ -48,11 +48,45 @@ Nao precisam do pipeline: perguntas, leitura/analise sem alteracao, e manutencao
 - Migrations Prisma sao sempre novas; nunca editar migrations aplicadas.
 - Saidas de cada execucao ficam em `squads/nxt-transport-team/output/<run_id>/`; historico em `squads/nxt-transport-team/_memory/runs.md`.
 
+## ProSystem
+
+O ProSystem tem o proprio squad: `prosystem-team`. Back e front ficam no mesmo repositorio; o squad divide os setores por camada.
+
+| Repo | Pasta | Stack |
+|------|-------|-------|
+| `Nxt-Julio/prosystem` (back + front) | local `D:/prosystem`; na nuvem `prosystem/` ao lado de `agents_squad/` | PHP 8.4 + Apache, PostgreSQL 18, Bootstrap 5, jQuery, Alpine.js; sem testes automatizados nem CI |
+| Backend `[BACK]` | `app/`, endpoints PHP, `tools/*.sql`, `Dockerfile`/`docker/` | |
+| Frontend `[FRONT]` | telas em `public_html/`, JS, CSS, `assets/` | |
+
+Deploy: merge em `main` dispara o deploy no Coolify (`https://panel.devalvaro.tech/`, aplicacao `bkklyxn7cexx7vmxlcbcuj54`, token na variavel `COOLIFY_TOKEN`). Cerebro: `squads/prosystem-team/_memory/` e o vault Obsidian em `D:/Cerebro`.
+
+### Regra principal: toda alteracao de codigo do ProSystem passa por `/opensquad run prosystem-team`
+
+Qualquer pedido que altere codigo no repositorio `prosystem` (feature, correcao, refatoracao, mudanca de banco, ajuste de tela) roda pelo squad, com o pedido do usuario como entrada do Step 01:
+
+```
+Solicitação -> Paula (análise) -> Beto (backend) -> Fernanda (front) -> Paula (aceite) -> Carlos (revisão) -> Quésia (QA) -> [aprovação] -> Gustavo (GitHub) -> Caio (Coolify) -> Mônica (cérebro) -> Entrega
+```
+
+Reprovacao no aceite, na revisao, no QA, no CI ou no deploy volta para o Beto (step 03); cada programador corrige so os itens do seu setor (`[BACK]`/`[FRONT]`). Depois de 3 ciclos o runner para e pede decisao ao usuario.
+
+### Regras do squad ProSystem
+
+1. Nada de merge, push em `main` ou alteracao no Coolify antes da aprovacao do usuario no step 08. Essa aprovacao autoriza o fluxo completo: merge, deploy, ajustes de configuracao no Coolify, migrations listadas no resumo e o commit da memoria.
+2. Contrato de API definido pela analise e implementado igual por back e front.
+3. Migrations sempre novas (SQL novo e idempotente em `tools/`).
+4. Segredos so em variavel de ambiente; nunca em arquivo versionado, relatorio ou cerebro.
+5. Setores sem impacto ficam `N/A` com relatorio de uma linha.
+6. Ninguem afirma resultado de comando sem colar a saida.
+
+Saidas de cada execucao: `squads/prosystem-team/output/<run_id>/`; historico em `squads/prosystem-team/_memory/runs.md` e `cerebro.md`.
+
 ## Arquivos do squad
 
 - `AGENTS.md` — instrucoes do sistema Opensquad (menu, rotas de comando)
 - `_opensquad/` — core (runner, prompts, boas praticas), memoria global e templates
 - `squads/nxt-transport-team/` — agentes, pipeline e memoria do time do NXT Transport
+- `squads/prosystem-team/` — agentes, pipeline, memoria e `tools/php-lint.js` do time do ProSystem
 - `scripts/` — CLI (`npm run validate:opensquad`, `npm run opensquad:template:list`, etc.)
 - `dashboard/` — visualizacao dos squads em execucao (`cd dashboard && npm install && npm run dev`)
 - `SQUAD-README.md` — README original do Agents Squad
