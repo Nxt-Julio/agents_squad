@@ -17,6 +17,17 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-24 — 2026-11-24-145113 — Permissão por nível numérico no Gestão PRO e no login
+
+- Pedido: conta com perfil `super_admin` fez saída de caixa para a RODEIO e ela caiu na VALE VISTORIAS; corrigir e parar de tratar permissão por nome, usando níveis 1-2-3-4 (viewer = 5).
+- Causa raiz: as telas de caixa só reconheciam `admin`, `master` e `superadmin`; o perfil `super_admin` não foi reconhecido, a conta foi tratada como usuário comum (sem filtro de empresa) e o lançamento foi gravado na empresa do cadastro.
+- Feito: [BACK] `app/nivel.php` (helpers `nivel_e_*`), coluna `servicos.users.nivel` + trigger `users_nivel_sincronizar` (`tools/users_nivel.sql`), login e portal gravam o nível na sessão; [FRONT] telas e endpoints do Gestão PRO e Controle de Acessos passaram a testar nível (44 arquivos). ECV, Placas, ProMaq, Consulta e Flutter ficam para a segunda entrega.
+- PR/SHA: sem PR (gh sem login; merge local --no-ff) / f94821879866afd0e45fd094695478d52d837b6f
+- Problemas: a revisão reprovou o ciclo 1 com 3 correções de permissão (a principal: oferecer o nível 3 no Controle de Acessos criava conta que ECV/Placas tratam como global); o aceite aprovou; sessões abertas antes do deploy não têm o nível; Controle de Acessos não pode oferecer nível 3 enquanto ECV/Placas tratarem `master` como global; 502/504 passageiros na troca de container.
+- Como resolveu: ciclo 2 corrigiu os 3 pontos; nível 3 fora do Controle de Acessos até a segunda entrega; migration antes do código; segunda varredura HTTP idêntica à linha de base; smoke PHP real 9/9 com ROLLBACK e 8/8 telas sem erro fatal.
+- Correção de dado: lançamento `cash_book` 2717 movido da empresa 1 para a 8 em 24/11/2026, autorizado pelo usuário e registrado em `system_logs` (ação `CORRECAO_CAIXA`).
+- Aprendizado: testar com PHP 8.4 real no container antes do deploy e SQL em banco descartável; CLI não exercita `filter_input`. Pendente: teste de navegador por nível (roteiro em v2/qa-report.md) e riscos de nível 2 / conta nível 1 sem `company_id`.
+
 ## 2026-11-23 — 2026-11-23-101119 — Controle de Acessos e modo duplo ECV + Placas
 
 - Pedido: cadastrar e editar usuários com empresa e produtos no Controle de Acessos, prazo em dias para troca de senha, e login que abre ECV na aba atual e Placas em nova aba para quem só tem os dois; manter as contas existentes como estão.
