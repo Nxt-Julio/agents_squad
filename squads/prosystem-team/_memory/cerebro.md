@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-25 — 2026-11-25-134955 — Busca por placa nas duas grafias
+
+- Pedido: vistoriadores queriam achar o veículo digitando a placa no padrão antigo ou Mercosul (RLO4666 / RLO4G66), qualquer que fosse a grafia cadastrada.
+- Feito: [BACK] `app/placa_equivalente.php` e uso em 8 filtros de placa + aviso de duplicidade no cadastro de ECV e Placas; os PDFs de ECV e Placas deixaram de descartar minúsculas do filtro. [FRONT] N/A.
+- PR/SHA: sem PR (merge local --no-ff) / 1bd896e
+- Problemas: a sessão negou rodar PHP no container, antes e depois do deploy.
+- Como resolveu: sintaxe por php-parser e `php -l` no container, tabela conferida em Node, URLs e log depois do deploy.
+- Aprendizado: placa antiga e Mercosul diferem só no 5º caractere por tabela fixa; busca parcial fica sem equivalência porque não dá para saber a posição do caractere. Pendente o teste de navegador.
+
 ## 2026-11-25 — 2026-11-25-092651 — Filtros com seleção múltipla nos dashboards
 
 - Pedido: poder marcar várias opções nos filtros do dashboard (ex.: Pix + Crédito; 3 empresas) e o resultado respeitar cada uma.
