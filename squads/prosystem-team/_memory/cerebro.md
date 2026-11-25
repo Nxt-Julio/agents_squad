@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-25 — 2026-11-25-141713 — NFS-e para vistoria não paga
+
+- Pedido: emitir nota também para vistoria ainda não paga; depois, colocar a opção dentro do painel Emissor Nacional.
+- Feito: [BACK] `app/nfse_pendente.php`; endpoint do Serviços passa a conferir a chave; Emissor Nacional grava `bloquear_se_pendente`. [FRONT] botão de nota em vistoria pendente em Serviços e nos dashboards de ECV e Placas quando a empresa permite; chave na tela Emissor Nacional; aviso do Emitir Nota diz onde liberar.
+- PR/SHA: sem PR (merge local --no-ff) / 9d8f693
+- Problemas: nenhum.
+- Como resolveu: n/a
+- Aprendizado: antes de criar trava ou liberação, procurar chave de configuração já existente; a regra pedida já existia por empresa e só faltava nas listas.
+
 ## 2026-11-25 — 2026-11-25-134955 — Busca por placa nas duas grafias
 
 - Pedido: vistoriadores queriam achar o veículo digitando a placa no padrão antigo ou Mercosul (RLO4666 / RLO4G66), qualquer que fosse a grafia cadastrada.
