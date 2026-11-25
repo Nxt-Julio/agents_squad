@@ -2,6 +2,8 @@
 
 | Data | Run ID | Tema | Output | Resultado | PR/SHA |
 |------|--------|------|--------|-----------|--------|
+| 2026-11-25 | 2026-11-25-144440 | Tela de opções ao emitir nota: enviar a placa e, com a chave da empresa, valor total ou com desconto (ECV, Placas, Serviços) | output/2026-11-25-144440/ | no ar; 1 ciclo; QA 230 + 78 casos em Node; php -l e função pura no PHP real; teste de navegador em homologação pendente com o usuário | sem PR (merge local) / 5168bf2 |
+| 2026-11-25 | 2026-11-25-numero-cautelar | Cautelar aparece com o número próprio (1, 2, 3...) em vez de 0 nas listas, recibo, relatório e edição (ECV, Placas, Gestão PRO) | output/2026-11-25-numero-cautelar/ | no ar; run enxuto (só pedido e resumo de aprovação); lint 15/15 e php -l no container; teste de navegador pendente com o usuário | sem PR (merge local) / 66c6f87 e f9bf543 (ordenação: cautelares depois das normais) |
 | 2026-11-25 | 2026-11-25-141713 | NFS-e para vistoria não paga quando a empresa permite; chave também no Emissor Nacional | output/2026-11-25-141713/ | no ar; 1 ciclo; só sintaxe e HTTP conferidos; teste de navegador pendente com o usuário | sem PR (merge local) / 9d8f693 |
 | 2026-11-25 | 2026-11-25-134955 | Busca por placa acha a grafia equivalente (antiga <-> Mercosul) | output/2026-11-25-134955/ | no ar; 1 ciclo; só sintaxe e HTTP conferidos; teste de navegador pendente com o usuário | sem PR (merge local) / 1bd896e |
 | 2026-11-25 | 2026-11-25-092651 | Filtros com seleção múltipla nos dashboards (ECV, Placas, Gestão PRO) e PDFs | output/2026-11-25-092651/ | no ar; 2 ciclos (aceite reprovou o PDF); QA 162/162 no PHP real; smoke de leitura tela × PDF ok; teste de navegador pendente com o usuário | sem PR (merge local) / 3aa507a |

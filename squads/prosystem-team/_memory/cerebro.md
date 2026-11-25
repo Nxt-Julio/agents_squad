@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-25 — 2026-11-25-144440 — Opções de placa e valor na emissão da NFS-e
+
+- Pedido: ao clicar em emitir nota, abrir uma tela perguntando se a placa vai na nota; com chave marcada no Emissor Nacional, perguntar também se a nota sai com valor total ou com desconto.
+- Feito: [BACK] `app/nfse_opcoes.php`; `acao=opcoes_emissao` e parâmetros `incluir_placa`/`valor_modo` nos três `ajax_nfse_indaial_v2.php`; coluna `nac_escolher_valor` (config + SQL em `tools/`); checkbox em Fiscal > Emissor Nacional. [FRONT] tela "Emitir NFS-e" no lugar do confirm nos dashboards de ECV e Placas e em Serviços, com as escolhas repetidas no reenvio depois do endereço.
+- PR/SHA: sem PR (merge local --no-ff) / 5168bf2
+- Problemas: nenhum (aceite, revisão e QA aprovaram no primeiro ciclo).
+- Como resolveu: n/a
+- Aprendizado: pedido com pontos em aberto pode seguir com padrões registrados no `request-input.md` e conferidos pelo usuário no step 08; o padrão sem escolha tem que ser idêntico ao comportamento anterior quando a mudança mexe em valor de nota.
+
 ## 2026-11-25 — 2026-11-25-141713 — NFS-e para vistoria não paga
 
 - Pedido: emitir nota também para vistoria ainda não paga; depois, colocar a opção dentro do painel Emissor Nacional.
