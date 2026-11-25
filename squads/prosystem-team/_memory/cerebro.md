@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-25 — 2026-11-25-092651 — Filtros com seleção múltipla nos dashboards
+
+- Pedido: poder marcar várias opções nos filtros do dashboard (ex.: Pix + Crédito; 3 empresas) e o resultado respeitar cada uma.
+- Feito: [BACK] `filtro_lista()` e WHERE com placeholders numerados nos dashboards de ECV e Placas (Vistoriador, Pagamento, Status), nos dois `gerar_relatorio.php` e `company_filter[]` no dashboard do Gestão PRO (cruzado com as empresas permitidas); [FRONT] componente `msel` (botão + checkboxes) nas três telas, envio só pelo "Filtrar" no Gestão PRO.
+- PR/SHA: sem PR (gh sem login; merge local --no-ff) / 3aa507a47d510df415fa6ffb9c2bf34c8430429f
+- Problemas: o aceite reprovou o ciclo 1: o despacho mandou manter a regra de pagamento própria de cada PDF, e ela procurava o slug por `LIKE` onde o banco guarda nome ou id, então Pix + Crédito no PDF sairia só com Pix.
+- Como resolveu: ciclo 2 levou para os PDFs a regra do dashboard (`EXISTS` em `payment_history` + `pm.slug`). Smoke pós-deploy com a tela incluída em CLI: Pix 30 + Crédito 3 = 33 no ECV, tela = PDF.
+- Aprendizado: quando tela e relatório têm o mesmo filtro, a análise confere no dump como o dado é guardado antes de mandar "manter a regra atual". Pendente: teste de navegador (seletor, celular, Gestão PRO com 3 empresas).
+
 ## 2026-11-24 — 2026-11-24-145113 — Permissão por nível numérico no Gestão PRO e no login
 
 - Pedido: conta com perfil `super_admin` fez saída de caixa para a RODEIO e ela caiu na VALE VISTORIAS; corrigir e parar de tratar permissão por nome, usando níveis 1-2-3-4 (viewer = 5).
