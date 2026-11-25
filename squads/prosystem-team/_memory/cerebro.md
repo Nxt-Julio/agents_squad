@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-25 — 2026-11-25-151626 — Nota em nome de outro cliente (despachante)
+
+- Pedido: se o cliente da vistoria é DESPACHANTE, perguntar na emissão se a nota sai em nome de outro cliente; a vistoria continua do despachante. Durante o run o usuário pediu as duas formas: buscar no cadastro ou digitar um cliente novo.
+- Feito: [BACK] `buscar_tomador`, `cadastrar_tomador` e `tomador_client_id` nos três `ajax_nfse_indaial_v2.php`; funções em `app/nfse_opcoes.php`; `salvar_tomador` com checagem de empresa (ECV/Placas) e aceitando o cliente da nota (Gestão PRO). [FRONT] bloco do despachante na tela "Emitir NFS-e" das três listas, com busca, formulário de cliente novo e formulário de endereço do cliente da nota.
+- PR/SHA: sem PR (merge local --no-ff) / 37741d0
+- Problemas: aceite reprovou duas vezes. (1) Em Serviços o formulário de endereço só gravava no cliente da vistoria. (2) A checagem nova de empresa no `salvar_tomador` do ECV/Placas barrava sessão sem empresa (admin de visão global).
+- Como resolveu: (1) `salvar_tomador` do Gestão PRO passou a aceitar `inspection_id` + `client_id` com as checagens da troca, e a tela de Serviços usa esse caminho quando há cliente da nota. (2) recusas por unidade só com `$company_id > 0`, espelhando o `emitir_nfse`.
+- Aprendizado: endurecer permissão em endpoint antigo pede a tabela "quem emite hoje × quem passa na checagem nova" antes de entregar; e conferir, para cada tela, por qual endpoint o formulário auxiliar grava (Serviços usa outro endpoint de endereço).
+
 ## 2026-11-25 — 2026-11-25-144440 — Opções de placa e valor na emissão da NFS-e
 
 - Pedido: ao clicar em emitir nota, abrir uma tela perguntando se a placa vai na nota; com chave marcada no Emissor Nacional, perguntar também se a nota sai com valor total ou com desconto.
