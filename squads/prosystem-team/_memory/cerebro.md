@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-26 — 2026-11-26-185712 — NFS-e agrupada (run 2 de 2)
+
+- Pedido: emitir uma NFS-e para várias vistorias, só com o mesmo CPF/CNPJ (alerta "Clientes diferentes"), somando valores e descontos. Telas decididas pelo usuário: Dashboard do ECV e Serviços do Gestão PRO; Placas fora.
+- Feito: [BACK] `app/nfse_agrupada.php` (prévia, validações, soma em centavos, emissão), tabela `nfse_nacional_dps_vistorias`, `nfse_nac_emitir_grupo`, trava de segunda nota e cancelamento pelo grupo em `nfse_nacional_service.php`, ações `opcoes_agrupada`/`emitir_agrupada`. [FRONT] botão "NFS-e agrupada" na barra Selecionados, prévia com somas, alerta "Clientes diferentes", campo Cidade no endereço do Serviços.
+- PR/SHA: sem PR (merge local --no-ff na worktree que está na main) / b11b734
+- Problemas: revisão reprovou o ciclo 1 (formulário de endereço do Serviços sem Cidade, que o Emissor Nacional exige → laço de need_address).
+- Como resolveu: campo Cidade obrigatório só na agrupada, mensagem com o campo que falta, `desconto_maior` bloqueando. Testes reais (php -l, smoke_puro 53/53) depois do deploy; migration aplicada durante o build.
+- Aprendizado: antes de planejar NFS-e, conferir `notas_config.provider` em produção (todas no Emissor Nacional em 26/11/2026). Ao esperar o deploy, conferir o SOURCE_COMMIT de cada container listado: outra tarefa pode publicar no meio.
+
 ## 2026-11-26 — 2026-11-26-143250 — Cliente da nota do despachante e consulta de CNPJ (run 1 de 2)
 
 - Pedido: três itens (nota agrupada, cliente × despachante, consulta de nome por CPF/CNPJ). Decisão do usuário: modelo "pagador fica", dois runs (este = despachante + CNPJ; run 2 = nota agrupada no Dashboard do ECV e no Serviços do Gestão PRO), CPF só pelo cadastro próprio.
