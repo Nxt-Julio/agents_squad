@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-26 — 2026-11-26-143250 — Cliente da nota do despachante e consulta de CNPJ (run 1 de 2)
+
+- Pedido: três itens (nota agrupada, cliente × despachante, consulta de nome por CPF/CNPJ). Decisão do usuário: modelo "pagador fica", dois runs (este = despachante + CNPJ; run 2 = nota agrupada no Dashboard do ECV e no Serviços do Gestão PRO), CPF só pelo cadastro próprio.
+- Feito: [BACK] coluna `inspections.nota_client_id` + `app/nota_cliente.php` (`nota_cli_*`); gravação na nova vistoria (ECV, Placas) e na edição (três); `opcoes_emissao` com `nota_cliente`/`nota_cliente_inativo`; `emitir_nfse` sem `tomador_client_id` usa o cliente da nota e recusa se inativo; `app/doc_consulta.php` + três `ajax_doc_consulta.php` (sessão, 30/min, cache 30 dias). [FRONT] campo "Cliente da nota fiscal" no quadro do despachante, linha "Nota: NOME" nas listas, tela de emissão pré-marcada, `assets/js/doc-lookup.js` nos formulários de cliente.
+- PR/SHA: sem PR (merge local --no-ff, feito dentro da worktree para não tocar D:/prosystem) / e680e74
+- Problemas: aceite do ciclo 1 reprovou (cliente da nota inativo travava a emissão; exclusão de cliente mexe em `active` e as listas filtravam `is_active`). O classificador do modo automático negou o QA que rodava PHP/banco no servidor; o QA ficou só em Node.
+- Como resolveu: `nota_cliente_inativo` + aviso na tela com "Não" enviando `tomador_client_id = 0`; filtro `ativo_nota` (active). Testes reais (php -l, smoke_puro, smoke_include) no step 10 depois do deploy, e passaram. Migrations aplicadas durante o build (aditivas).
+- Aprendizado: merge sem tocar a pasta principal = `git checkout main` dentro da worktree da feature (a main não estava em uso em outra pasta). Placas: só `admin` tem visão global no dashboard; `superadmin` com empresa 0 dá lista vazia (não é regressão).
+
 ## 2026-11-26 — 2026-11-26-075110 — Trava de segunda nota por vistoria
 
 - Pedido: correções do run 2026-11-25-151626, com a regra "não pode ser gerada segunda nota para vistoria que já emitiu nota".
