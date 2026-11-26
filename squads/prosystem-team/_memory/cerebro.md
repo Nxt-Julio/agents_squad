@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-26 — 2026-11-26-075110 — Trava de segunda nota por vistoria
+
+- Pedido: correções do run 2026-11-25-151626, com a regra "não pode ser gerada segunda nota para vistoria que já emitiu nota".
+- Feito: [BACK] `nfse_nac_emitir` barra também em homologação (por ambiente); `emitir_nfse` do Gestão PRO com leitura de `nfse_issued`, 409 `ja_emitida`/`em_andamento` e lock por vistoria; `opcoes_emissao` com `ja_emitida`, `nota_numero`, `nota_link`; aviso de nota recuperada em nome de outro cliente; lock no cadastro do cliente da nota; `cliente_nome` escondido de quem não tem a empresa. [FRONT] aviso "NFS-e já emitida" nas três listas.
+- PR/SHA: sem PR (merge local --no-ff) / d646f8c
+- Problemas: o primeiro smoke rodou contra o container antigo, porque o build levou 17 minutos e a espera de 10 acabou antes.
+- Como resolveu: conferir `SOURCE_COMMIT` e o nome do container antes do smoke; segunda espera até o SHA novo.
+- Aprendizado: regra de trava baseada em `nfse_numero` herda o COALESCE do `nfse_upsert`; cancelamento fora do sistema não chega ao banco. Ficam como limites registrados em memories.md.
+
 ## 2026-11-25 — 2026-11-25-151626 — Nota em nome de outro cliente (despachante)
 
 - Pedido: se o cliente da vistoria é DESPACHANTE, perguntar na emissão se a nota sai em nome de outro cliente; a vistoria continua do despachante. Durante o run o usuário pediu as duas formas: buscar no cadastro ou digitar um cliente novo.
