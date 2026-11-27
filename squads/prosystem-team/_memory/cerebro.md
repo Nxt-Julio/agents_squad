@@ -17,6 +17,15 @@ Formato:
 
 <!-- entradas abaixo -->
 
+## 2026-11-26 — 2026-11-26-202509 — Suprimentos e Acesso por Tela
+
+- Pedido: módulo Suprimentos no Gestão PRO e tela para liberar/bloquear telas por usuário. Decisões do usuário: estoque único; níveis 1-2 administram estoque e fila, 3-4 solicitam, 5 só vê as próprias; Acesso por Tela só nível 1, por usuário, cobrindo Gestão PRO, ECV e Placas.
+- Feito: [BACK] `app/suprimentos.php` e `app/acesso_telas.php`, tabelas `sup_itens`, `sup_solicitacoes`, `sup_solicitacao_itens`, `sup_movimentacoes` e `public.acesso_telas`. [FRONT] telas de estoque, fila e solicitação, `controle_telas.php` e checagem de tela nos três `header.php`. Padrão liberado, fail-open, nível 1 nunca bloqueado; tela `so_menu` só some do menu.
+- PR/SHA: sem PR (gh sem autenticação; merge local --no-ff) / 1d9183a (feature 4d9ac74)
+- Problemas: aceite reprovou o ciclo 1 (`crm_funil` sem `so_menu`, porque `crm_funil.php` não inclui o header, então o bloqueio não valia).
+- Como resolveu: `crm_funil` marcada `so_menu` no ciclo 2. Migrations aplicadas antes do container novo (backup antes); smoke real 43 ok/0 falha, inclusive o ON CONFLICT ... DO UPDATE ... WHERE do acesso_telas no PostgreSQL. Build ~4-5 min.
+- Aprendizado: ver memories.md (smoke com SAVEPOINT, migrations antes do container, páginas sem header). Limites aceitos: AJAX não é bloqueado por tela; em algumas páginas o POST é processado antes do header.
+
 ## 2026-11-26 — 2026-11-26-185712 — NFS-e agrupada (run 2 de 2)
 
 - Pedido: emitir uma NFS-e para várias vistorias, só com o mesmo CPF/CNPJ (alerta "Clientes diferentes"), somando valores e descontos. Telas decididas pelo usuário: Dashboard do ECV e Serviços do Gestão PRO; Placas fora.
