@@ -18,6 +18,13 @@ Formato:
 <!-- entradas abaixo -->
 
 
+
+## 2026-11-27 — 2026-11-27-110541 — Suprimentos: descrição em caixa alta
+
+- Pedido: descrição do produto sempre em maiúsculas, inclusive enquanto cadastra.
+- Feito: listener input/compositionend no campo Descrição (mantém cursor), text-transform, edição e envio em maiúsculas; `mb_strtoupper` no servidor antes do corte em 150. Sem migration: consulta só de leitura mostrou 6/6 já em maiúsculas.
+- Problemas: nenhum. Observação de UX aceita: Ctrl+Z fica limitado no campo porque o valor é trocado por código.
+
 ## 2026-11-27 — 2026-11-27-085624 — Suprimentos: Cor vira Marca
 
 - Pedido: gravar marca em vez de cor no Suprimentos ("de momento"), trocando o rótulo ou criando campo Marca e escondendo Cor.
