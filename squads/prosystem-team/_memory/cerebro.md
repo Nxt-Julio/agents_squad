@@ -17,6 +17,13 @@ Formato:
 
 <!-- entradas abaixo -->
 
+
+## 2026-11-27 — 2026-11-27-085624 — Suprimentos: Cor vira Marca
+
+- Pedido: gravar marca em vez de cor no Suprimentos ("de momento"), trocando o rótulo ou criando campo Marca e escondendo Cor.
+- Feito: escolhida a troca de rótulo (sem migration): th, data-label e label do modal em `suprimentos_estoque.php`; Solicitar e Fila só mostram o valor, sem rótulo.
+- Problemas: o agente de revisão disse que `app/suprimentos.php` não existia; existe (conferido pelo orquestrador). Rolling update deixou o container antigo uns segundos no ar: conferir que só o novo ficou antes do smoke.
+
 ## 2026-11-26 — 2026-11-26-202509 — Suprimentos e Acesso por Tela
 
 - Pedido: módulo Suprimentos no Gestão PRO e tela para liberar/bloquear telas por usuário. Decisões do usuário: estoque único; níveis 1-2 administram estoque e fila, 3-4 solicitam, 5 só vê as próprias; Acesso por Tela só nível 1, por usuário, cobrindo Gestão PRO, ECV e Placas.
