@@ -19,6 +19,13 @@ Formato:
 
 
 
+
+## 2026-11-27 — 2026-11-27-144513 — Suprimentos: campo Categoria
+
+- Pedido: campo CATEGORIA no cadastro de itens.
+- Feito: coluna nova (migration aditiva `tools/suprimentos_categoria.sql`), categoria opcional em caixa alta com sugestões, coluna na tabela do Estoque, busca por categoria, categoria no detalhe do Solicitar.
+- Problemas: script de edição não achava os trechos porque o checkout deixou CRLF; resolvido normalizando EOL. Revisão sugeriu `pg_attribute` no lugar de `information_schema` (10x mais rápido), aplicado e conferido em produção.
+
 ## 2026-11-27 — 2026-11-27-110541 — Suprimentos: descrição em caixa alta
 
 - Pedido: descrição do produto sempre em maiúsculas, inclusive enquanto cadastra.
