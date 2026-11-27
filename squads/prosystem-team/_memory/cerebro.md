@@ -20,6 +20,13 @@ Formato:
 
 
 
+
+## 2026-11-27 — 2026-11-27-152311 — Suprimentos: cadastros de Categoria e Marca
+
+- Pedido: duas telas para cadastrar categoria e marca; no cadastro do produto mostrar as existentes e pedir para escolher.
+- Feito: tabelas sup_categorias/sup_marcas, tela comum com listar/buscar/cadastrar/renomear/inativar, selects obrigatórios no item com validação no servidor, menu, Acesso por Tela e botões no Estoque.
+- Problemas: heredoc longo do Bash falhou ("unexpected EOF") com JS de template literal; resolvido escrevendo o script com Write. QA achou corrida no GET opcoes (resposta atrasada de outro modal) e mensagens; corrigido com contador de sequência.
+
 ## 2026-11-27 — 2026-11-27-144513 — Suprimentos: campo Categoria
 
 - Pedido: campo CATEGORIA no cadastro de itens.
